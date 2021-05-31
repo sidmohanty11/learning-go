@@ -22,12 +22,21 @@ func main() {
 			zip:   68940,
 		},
 	}
+	// & -> &varName -> give me the address of anya
 	anya.updateName("Malhotra")
 	anya.details()
 }
 
-func (p person) updateName(newLastName string) {
-	p.lastName = newLastName
+//* -> *pointer -> give me the value at that address
+func (pointerToPerson *person) updateName(newLastName string) {
+	//---------Rule to really remember-----------------:-
+	//Turn address into value with *address / *pointer
+	//Turn value into address with &value
+
+	(*pointerToPerson).lastName = newLastName
+
+	// *type -> *person -> looking for a pointer to a person(type description)
+	// *pointer -> *pointerToPerson -> give me the value
 }
 
 func (p person) details() {
