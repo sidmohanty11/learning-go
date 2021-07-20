@@ -6,7 +6,7 @@ import (
 )
 
 func TestNewDeck(t *testing.T) { //t -> test handler
-	d := newDeck() //can't import function from another file
+	d := NewDeck() //can't import function from another file
 
 	if len(d) != 52 {
 		t.Errorf("Expected deck len of 52 but got, %v", len(d))
@@ -20,10 +20,10 @@ func TestNewDeck(t *testing.T) { //t -> test handler
 func TestSaveToDeckAndNewDeckFromFile(t *testing.T) {
 	os.Remove("_decktesting")
 
-	deck := newDeck() //can't import function from another file
+	deck := NewDeck() //can't import function from another file
 	deck.saveToFile("_decktesting")
 
-	loadedDeck := newDeckFromFile("_decktesting") //can't import function from another file
+	loadedDeck := NewDeckFromFile("_decktesting") //can't import function from another file
 
 	if len(loadedDeck) != 52 {
 		t.Errorf("Expected 52 cards got %v", len(loadedDeck))

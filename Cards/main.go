@@ -1,7 +1,7 @@
 package main
 
 func main() {
-	cards := newDeck()
+	cards := NewDeck()
 	cards.shuffle()
 	cards.print()
 }

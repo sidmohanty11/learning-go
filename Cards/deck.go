@@ -13,7 +13,7 @@ import (
 //->type deck extends all props of slice of string
 type deck []string
 
-func newDeck() deck {
+func NewDeck() deck {
 	cards := deck{}
 
 	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
@@ -58,7 +58,7 @@ func (d deck) saveToFile(filename string) error {
 	return ioutil.WriteFile(filename, []byte(d.deckToString()), 0666)
 }
 
-func newDeckFromFile(filename string) deck {
+func NewDeckFromFile(filename string) deck {
 	bs, err := ioutil.ReadFile(filename)
 	if err != nil {
 		fmt.Println("Error: ", err)
